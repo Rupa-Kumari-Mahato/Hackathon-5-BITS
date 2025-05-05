@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, session, redirect
 import sqlite3
 
-dashboard_bp = Blueprint('dashboard', _name_)
+dashboard_bp = Blueprint('dashboard', __name__)
 
 @dashboard_bp.route('/dashboard')
 def dashboard():
