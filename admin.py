@@ -4,12 +4,12 @@ import sqlite3
 admin_bp = Blueprint('admin' ,__name__)
 @admin_bp.route('/admin')
 def admin_dashboard();
- if 'role' not in session or session or session['role']!= 'admin';
+ if 'role' not in session or session or session['role']!= 'admin':
   return redirect('/')
  
  conn = sqlitre3.connect('data/learning_system.db')
  cur = conn.cursor()
- cur.execute(#ygygiyiygyfyddxrydtu)
+ cur.execute(#select user,user name,student marks)
  )
  report = curr.fatchall()
  conn.close()
