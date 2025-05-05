@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Bootstrap CSS (from CDN) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /* Custom styles */
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient Background */
+            font-family: 'Arial', sans-serif;
+            padding-top: 20px;
+            color: white;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .card {
+            transition: transform 0.3s ease-in-out;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .btn {
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+
+        /* Improved button colors */
+        .btn-outline-primary {
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-outline-secondary {
+            color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .text-end {
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .card-body {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .card-text {
+            color: #6c757d;
+        }
+
+        .btn-sm {
+            font-size: 14px;
+            padding: 6px 12px;
+        }
+
+        /* Custom hover effect for buttons */
+        .btn:focus, .btn:hover {
+            box-shadow: none;
+        }
+
+        .text-center {
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: 50px;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-weight: lighter;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .card-title {
+                font-size: 1rem;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Welcome to Your Learning Dashboard</h1>
+            <p>Choose your language and start exploring the modules</p>
+        </div>
+
+        <!-- Language Selection -->
+        <div class="text-end mb-3">
+            <!-- Language Selection Buttons with better color visibility -->
+            <a href="{{ url_for('language.set_language', lang='en') }}" class="btn btn-outline-primary btn-sm">English</a>
+            <a href="{{ url_for('language.set_language', lang='hi') }}" class="btn btn-outline-secondary btn-sm">हिन्दी</a>
+        </div>
+
+        <!-- Module Content -->
+        <div class="row">
+            {% for key, module in modules.items() %}
+            <div class="col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ module.title }}</h5>
+                        <p class="card-text">{{ content[key] }}</p>
+                        <a href="{{ module.quiz_link }}" class="btn btn-success">📖 Take Quiz</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Back to Dashboard -->
+        <div class="text-center mt-4 footer">
+            <a href="{{ url_for('dashboard.dashboard') }}" class="btn btn-secondary">← Back to Dashboard</a>
+        </div>
+        
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
