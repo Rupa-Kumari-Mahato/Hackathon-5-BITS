@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-5">
+        <h2>Learning Dashboard</h2>
+        
+        <!-- Maths Module -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>Maths</h4>
+                <p>Test your knowledge on various mathematical concepts.</p>
+                <a href="{{ url_for('take_quiz', module_name='maths') }}" class="btn btn-primary">Take a Quiz</a>
+            </div>
+        </div>
+
+        <!-- Science Module -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>Science</h4>
+                <p>Test your knowledge about the world of science.</p>
+                <a href="{{ url_for('take_quiz', module_name='science') }}" class="btn btn-primary">Take a Quiz</a>
+            </div>
+        </div>
+
+        <!-- History Module -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>History</h4>
+                <p>Test your knowledge on historical events.</p>
+                <a href="{{ url_for('take_quiz', module_name='history') }}" class="btn btn-primary">Take a Quiz</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
