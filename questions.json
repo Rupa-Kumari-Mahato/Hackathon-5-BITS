@@ -1,0 +1,25 @@
+{
+    "Math": [
+      {
+        "id": 1,
+        "question": "2 + 2 = ?",
+        "options": ["3", "4", "5", "6"],
+        "answer": "4"
+      },
+      {
+        "id": 2,
+        "question": "5 x 3 = ?",
+        "options": ["8", "15", "10", "20"],
+        "answer": "15"
+      }
+    ],
+    "Science": [
+      {
+        "id": 1,
+        "question": "Water boils at ___ degrees Celsius.",
+        "options": ["90", "100", "80", "120"],
+        "answer": "100"
+      }
+    ]
+  }
+  
