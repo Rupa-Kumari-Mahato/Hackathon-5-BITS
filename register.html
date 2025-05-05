@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Registration form</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+    <form action="#" method="POST">
+    <div class="title">
+Registration Form
+    </div>
+<div class="form">
+    <div class="input_field">
+        <label>First Name</label>
+        <input type="text" class="input" name="fname" required>
+    </div>
+    <div class="input_field">
+        <label>Last Name</label>
+        <input type="text" class="input" name="lname" required>
+    </div>
+    <div class="input_field">
+        <label>Password</label>
+        <input type="password" class="input" name="password" required>
+    </div>
+    <div class="input_field">
+        <label>Confirm Password</label>
+        <input type="password" class="input" name="conpassword" required>
+    </div>
+    <div class="input_field">
+        <label>Gender</label>
+        <div class="selectbox">
+         <select name="gender" required>
+             <option value="">Select</option>
+             <option value="male">Male</option>
+             <option value="female">Female</option>
+             <option value="others">Others</option>
+         </select>
+        </div>
+    </div>
+    <div class="input_field">
+        <label>Email Id</label>
+        <input type="email" class="input" name="email" required>
+    </div>
+    <div class="input_field">
+        <label>Phone Number</label>
+        <input type="text" class="input" name="phone" required>
+    </div>
+    <div class="input_field">
+        <label>Address</label>
+      <textarea class="textarea" name="address" required></textarea>
+    </div>
+    <div class="input_field terms">
+        <label class="check">
+        <input type="checkbox" required>
+        <span class="checkmark"></span>
+    </label>
+    <p>I Accept the terms and Conditions</p>
+    </div>
+    <div class="input_field">
+      <input type="submit" value="Register" class="btn" name="register">
+    </div>
+</div>
+</form>
+</div>
+</body>
+</html>
+
