@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Dashboard</title></head>
+<body>
+    <h2>Welcome, {{ session.username }}</h2>
+    <h3>Your Scores:</h3>
+    <ul>
+        {% for topic, score in scores %}
+            <li>{{ topic }}: {{ score }}%</li>
+        {% endfor %}
+    </ul>
+    <a href="/quiz">Take New Quiz</a>
+</body>
+</html>
